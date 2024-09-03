@@ -36,29 +36,30 @@ h2 {
     text-align: center;
 }
 
-/* Flexbox Layout for Members and Players */
+/* Flexbox Layout for Committee Members and Squad Players */
 .grid {
     display: flex;
-    justify-content: space-around; /* Evenly distribute items with space around them */
+    justify-content: space-around; /* Space items evenly across the row */
     align-items: center; /* Center items vertically */
     text-align: center;
     flex-wrap: nowrap; /* Keep all items in a single line */
+    gap: 20px; /* Add spacing between items */
 }
 
-/* Member Item Styles */
-.member-item, .player {
-    flex: 1;
-    min-width: 0; /* Prevent items from stretching too much */
+/* Member and Player Item Styles */
+.member-item, .player-item {
+    flex: 1; /* Distribute space evenly */
+    min-width: 150px; /* Ensure a minimum width */
     margin: 10px;
 }
 
-.member-item h3, .player h3 {
+.member-item h3, .player-item h3 {
     margin: 0;
     font-size: 18px;
     color: #ff4500;
 }
 
-.member-item p, .player p {
+.member-item p, .player-item p {
     margin: 0;
     font-size: 16px;
 }
