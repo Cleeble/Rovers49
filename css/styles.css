@@ -12,13 +12,13 @@ header {
     background-color: #333;
     padding: 20px;
     display: flex;
-    align-items: center;
+    align-items: Right;
     justify-content: space-between; /* Space between logo and nav */
 }
 
 header .logo {
     display: flex;
-    align-items: center;
+    align-items: Left;
 }
 
 header .logo img {
