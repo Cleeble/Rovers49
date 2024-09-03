@@ -5,107 +5,6 @@ body {
     color: #fff;
     margin: 0;
     padding: 0;
-    text-align: center; /* Center all text on the page */
-}
-
-/* Header Styles */
-header {
-    background-color: #333;
-    padding: 20px;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    height: 80px; /* Adjust the logo size */
-    margin-right: 15px;
-}
-
-header h1 {
-    font-size: 36px; /* Make the header text larger */
-    color: #ff4500; /* Orange color for the text */
-    margin: 0;
-}
-
-/* Navigation Bar */
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* Main Content */
-main {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 70vh; /* Adjust height as needed */
-}
-
-h2 {
-    color: #ff4500;
-    margin-bottom: 20px;
-}
-
-footer {
-    background-color: #333;
-    padding: 20px;
-    text-align: center;
-}
-/* Table Styles */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    color: #fff;
-}
-
-table, th, td {
-    border: 1px solid #444;
-}
-
-th, td {
-    padding: 10px;
-    text-align: center;
-}
-
-th {
-    background-color: #333;
-    color: #ff4500; /* Orange color for headers */
-}
-
-tbody tr:nth-child(even) {
-    background-color: #444;
-}
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #222;
-    color: #fff;
-    margin: 0;
-    padding: 0;
 }
 
 /* Header Styles */
@@ -130,12 +29,46 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Grid Layout for Team Members */
+/* Home Page Styles */
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+header .logo img {
+    max-width: 80px; /* Adjust size as needed */
+    margin-right: 20px;
+}
+
+header .logo h1 {
+    font-size: 36px; /* Larger font size for the header */
+    margin: 0;
+}
+
+main {
+    text-align: center; /* Center all text on the home page */
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+#carousel {
+    /* Placeholder for carousel styles if needed */
+}
+
+/* Grid Layout for Team Members and Squad Players */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(5, 1fr); /* Five columns across */
     gap: 20px; /* Spacing between grid items */
     text-align: center; /* Center the text in each grid item */
+    margin: 20px; /* Add some space around the grid */
 }
 
 .member, .player {
@@ -151,4 +84,50 @@ h3 {
 
 p {
     margin: 0;
+    color: #fff; /* White color for positions */
+}
+
+/* Table Styles for Statistics Page */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    color: #fff;
+    font-size: 18px; /* Larger font size for better readability */
+}
+
+table, th, td {
+    border: 1px solid #444;
+}
+
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
+th {
+    background-color: #333;
+    color: #ff4500; /* Orange color for table headers */
+    font-size: 20px; /* Larger font size for headers */
+}
+
+tbody tr:nth-child(even) {
+    background-color: #444;
+}
+
+/* Additional Styling for Better Visuals */
+.grid-container h3, .grid-container p {
+    font-size: 18px; /* Larger font size for names and positions */
+}
+
+.grid-container .member, .grid-container .player {
+    transition: background-color 0.3s ease;
+}
+
+.grid-container .member:hover, .grid-container .player:hover {
+    background-color: #555; /* Darker shade on hover */
+}
+
+table tbody tr:hover {
+    background-color: #555; /* Darker shade on hover for table rows */
 }
