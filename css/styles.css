@@ -39,16 +39,16 @@ h2 {
 /* Flexbox Layout for Members and Players */
 .grid {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around; /* Evenly distribute items with space around them */
+    align-items: center; /* Center items vertically */
     text-align: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* Keep all items in a single line */
 }
 
 /* Member Item Styles */
 .member-item, .player {
     flex: 1;
-    min-width: 150px; /* Minimum width to prevent overcrowding */
+    min-width: 0; /* Prevent items from stretching too much */
     margin: 10px;
 }
 
