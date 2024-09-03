@@ -11,30 +11,14 @@ body {
 header {
     background-color: #333;
     padding: 20px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Space between logo and nav */
 }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-/* Home Page Styles */
 header .logo {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
 }
 
 header .logo img {
@@ -45,8 +29,31 @@ header .logo img {
 header .logo h1 {
     font-size: 36px; /* Larger font size for the header */
     margin: 0;
+    color: #ff4500; /* Orange color for the header text */
 }
 
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Home Page Styles */
 main {
     text-align: center; /* Center all text on the home page */
     padding: 20px;
@@ -106,8 +113,8 @@ th, td {
 }
 
 th {
-    background-color: #333;
-    color: #ff4500; /* Orange color for table headers */
+    background-color: #ff4500; /* Orange color for table headers */
+    color: #fff; /* White text color for contrast */
     font-size: 20px; /* Larger font size for headers */
 }
 
