@@ -12,19 +12,21 @@ body {
 header {
     background-color: #333;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 .header-content {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
 }
 
 .logo {
-    height: 80px; /* Adjust the logo size as needed */
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px; /* Adjust the logo size */
     margin-right: 15px;
 }
 
@@ -34,12 +36,13 @@ header h1 {
     margin: 0;
 }
 
+/* Navigation Bar */
 nav ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
-    padding: 10px 0;
-    margin: 20px 0 0 0;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -52,11 +55,11 @@ nav ul li a {
     font-size: 18px;
 }
 
-/* Main Content Styles */
+/* Main Content */
 main {
     padding: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 70vh; /* Adjust height as needed */
 }
@@ -64,4 +67,10 @@ main {
 h2 {
     color: #ff4500;
     margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
 }
