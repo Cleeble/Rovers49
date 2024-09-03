@@ -57,6 +57,7 @@ nav ul li a {
 main {
     text-align: center; /* Center all text on the home page */
     padding: 20px;
+    color: #ff4500; /* Orange color for text */
 }
 
 footer {
