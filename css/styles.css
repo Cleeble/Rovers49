@@ -102,7 +102,6 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    color: #000; /* Set table text to black */
     font-size: 18px; /* Larger font size for better readability */
 }
 
@@ -115,19 +114,29 @@ th, td {
     text-align: center;
 }
 
+/* Orange background for table headers with white text */
 th {
     background-color: #ff4500; /* Orange color for table headers */
     color: #fff; /* White text color for contrast */
     font-size: 20px; /* Larger font size for headers */
 }
 
-tbody tr:nth-child(even) {
-    background-color: #444;
-    color: #000; /* Ensure text in even rows is black */
+/* White background rows with black text */
+tbody tr:nth-child(odd) {
+    background-color: #fff;
+    color: #000; /* Black text color for better readability */
 }
 
-tbody tr:nth-child(odd) {
-    color: #000; /* Ensure text in odd rows is black */
+/* Grey background rows with white text */
+tbody tr:nth-child(even) {
+    background-color: #444;
+    color: #fff; /* White text color for contrast */
+}
+
+/* Hover effects for table rows */
+table tbody tr:hover {
+    background-color: #555; /* Darker shade on hover for table rows */
+    color: #fff; /* White text on hover for better visibility */
 }
 
 /* Additional Styling for Better Visuals */
@@ -141,8 +150,4 @@ tbody tr:nth-child(odd) {
 
 .grid-container .member:hover, .grid-container .player:hover {
     background-color: #555; /* Darker shade on hover */
-}
-
-table tbody tr:hover {
-    background-color: #555; /* Darker shade on hover for table rows */
 }
