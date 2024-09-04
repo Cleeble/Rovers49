@@ -2,7 +2,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #222;
-    color: #fff; /* White text for the whole page */
+    color: #fff;
     margin: 0;
     padding: 0;
 }
@@ -14,7 +14,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between; /* Space between logo and nav */
-    width: 100%; /* Ensure header takes full width */
 }
 
 header .logo {
@@ -35,18 +34,17 @@ header .logo h1 {
 
 nav {
     display: flex;
-    justify-content: flex-end; /* Ensure the menu stays to the right */
-    flex-grow: 1; /* Allows nav to take up remaining space */
+    align-items: center;
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex;
 }
 
 nav ul li {
+    display: inline;
     margin-left: 20px;
 }
 
@@ -66,10 +64,6 @@ footer {
     background-color: #333;
     padding: 10px;
     text-align: center;
-}
-
-#carousel {
-    /* Placeholder for carousel styles if needed */
 }
 
 /* Grid Layout for Team Members and Squad Players */
@@ -109,40 +103,81 @@ table, th, td {
     border: 1px solid #444;
 }
 
-/* Orange background for table headers with white text */
+th, td {
+    padding: 15px;
+    text-align: center;
+}
+
 th {
     background-color: #ff4500; /* Orange color for table headers */
-    color: #fff; /* White text color for contrast */
+    color: #000; /* Black text color */
     font-size: 20px; /* Larger font size for headers */
 }
 
-/* White background rows with black text */
+tbody tr:nth-child(even) {
+    background-color: #444;
+    color: #fff; /* White text on dark background */
+}
+
 tbody tr:nth-child(odd) {
     background-color: #fff;
-    color: #000; /* Black text color for better readability */
+    color: #000; /* Black text on light background */
 }
 
-/* Grey background rows with black text */
-tbody tr:nth-child(even) {
-    background-color: #ddd; /* Light grey background for even rows */
-    color: #000; /* Black text color for better readability */
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Stack the logo and menu vertically */
+        align-items: flex-start; /* Align items to the start of the header */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack menu items vertically */
+        margin-top: 10px; /* Add some space between logo and menu */
+    }
+
+    nav ul li {
+        margin-left: 0; /* Remove left margin for vertical stacking */
+        margin-bottom: 10px; /* Add space between each menu item */
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+    }
 }
 
-/* Hover effects for table rows */
-table tbody tr:hover {
-    background-color: #555; /* Darker shade on hover for table rows */
-    color: #555; /* Grey text on hover for better visibility */
-}
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Single column for small screens */
+    }
 
-/* Additional Styling for Better Visuals */
-.grid-container h3, .grid-container p {
-    font-size: 18px; /* Larger font size for names and positions */
-}
+    table, th, td {
+        font-size: 16px; /* Reduce font size for readability on smaller screens */
+    }
 
-.grid-container .member, .grid-container .player {
-    transition: background-color 0.3s ease;
-}
+    table {
+        overflow-x: auto; /* Allow horizontal scrolling for tables */
+        display: block;
+    }
 
-.grid-container .member:hover, .grid-container .player:hover {
-    background-color: #555; /* Darker shade on hover */
+    /* Adjust header for very small screens */
+    header {
+        padding: 10px;
+    }
+
+    header .logo img {
+        max-width: 60px; /* Smaller logo */
+    }
+
+    header .logo h1 {
+        font-size: 28px; /* Smaller header text */
+    }
+
+    nav ul {
+        text-align: left; /* Align text to left for smaller screens */
+    }
+
+    main {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
 }
