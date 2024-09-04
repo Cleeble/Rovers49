@@ -5,17 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Team - Statistics</title>
     <link rel="stylesheet" href="css/styles.css">
-    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
-    <script>
-        $(document).ready(function() {
-            $('#statsTable').DataTable({
-                "paging": true,
-                "searching": true,
-                "ordering": true
-            });
-        });
-    </script>
+    <!-- Include jQuery for any future dynamic needs -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header>
@@ -33,7 +24,7 @@
         </nav>
     </header>
 
-    < <main>
+   < <main>
         <section id="player-stats">
             <h2>Player Statistics</h2>
             <table id="playerStatsTable">
@@ -264,15 +255,23 @@
             </table>
         </section>
 
+
         <section id="season-stats">
             <h2>Season Statistics</h2>
             <div class="infographic">
                 <!-- Placeholder for infographic -->
             </div>
         </section>
-    </main>
 
-    <script>
+        <section id="league-table">
+            <h2>League Table</h2>
+            <iframe src="https://football.mitoo.co.uk/LeagueTab.cfm?TblName=Matches&DivisionID=1624&LeagueCode=HITCH2024" 
+                    style="width: 100%; height: 600px; border: none;">
+                Your browser does not support iframes.
+            </iframe>
+        </section>
+    </main>
+ <script>
         function sortTable(columnIndex) {
             var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
             table = document.getElementById("playerStatsTable");
