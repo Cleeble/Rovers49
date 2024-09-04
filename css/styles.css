@@ -131,7 +131,7 @@ tbody tr:nth-child(even) {
 /* Hover effects for table rows */
 table tbody tr:hover {
     background-color: #555; /* Darker shade on hover for table rows */
-    color: #fff; /* White text on hover for better visibility */
+    color: #000; /* Black text on hover for better visibility */
 }
 
 /* Additional Styling for Better Visuals */
