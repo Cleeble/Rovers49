@@ -34,8 +34,8 @@ header .logo h1 {
 }
 
 nav {
-    display: right;
-    justify-content: right; /* Ensure the menu stays to the right */
+    display: flex;
+    justify-content: flex-end; /* Ensure the menu stays to the right */
     flex-grow: 1; /* Allows nav to take up remaining space */
 }
 
@@ -43,7 +43,7 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: right;
+    display: flex;
 }
 
 nav ul li {
@@ -124,14 +124,14 @@ tbody tr:nth-child(odd) {
 
 /* Grey background rows with black text */
 tbody tr:nth-child(even) {
-    background-color: #444;
+    background-color: #ddd; /* Light grey background for even rows */
     color: #000; /* Black text color for better readability */
 }
 
 /* Hover effects for table rows */
 table tbody tr:hover {
     background-color: #555; /* Darker shade on hover for table rows */
-    color: #000; /* Black text on hover for better visibility */
+    color: #fff; /* White text on hover for better visibility */
 }
 
 /* Additional Styling for Better Visuals */
