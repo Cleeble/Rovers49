@@ -100,7 +100,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    color: #fff;
+    color: #000; /* Black color for text in the table */
     font-size: 18px; /* Larger font size for better readability */
 }
 
@@ -120,7 +120,13 @@ th {
 }
 
 tbody tr:nth-child(even) {
-    background-color: #444;
+    background-color: #f4f4f4; /* Light background for better contrast */
+    color: #000; /* Ensure text is black even on light backgrounds */
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #eaeaea; /* Slightly darker light background */
+    color: #000; /* Ensure text is black on light backgrounds */
 }
 
 /* Additional Styling for Better Visuals */
@@ -137,7 +143,8 @@ tbody tr:nth-child(even) {
 }
 
 table tbody tr:hover {
-    background-color: #555; /* Darker shade on hover for table rows */
+    background-color: #ccc; /* Lighter shade on hover for table rows */
+    color: #000; /* Ensure text stays black on hover */
 }
 
 /* DataTables Custom Styling */
