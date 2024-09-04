@@ -5,27 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Football Team - Statistics</title>
     <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="images/Red and Black Circle Modern Football Club Logo (1).jpg" alt="Team Logo">
-            <h1>Rovers 49</h1>
+        <div class="header-content">
+            <div class="logo">
+                <img src="images/Red and Black Circle Modern Football Club Logo (1).jpg" alt="Team Logo">
+                <h1>Rovers 49</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="team.html">Meet the Team</a></li>
+                    <li><a href="statistics.html">Statistics</a></li>
+                    <li><a href="documents.html">Documents</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="team.html">Meet the Team</a></li>
-                <li><a href="statistics.html">Statistics</a></li>
-                <li><a href="documents.html">Documents</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
         <section id="player-stats">
             <h2>Player Statistics</h2>
-            <table>
+            <table id="stats-table" class="display">
                 <thead>
                     <tr>
                         <th>Player</th>
@@ -260,6 +265,28 @@
             </div>
         </section>
     </main>
+
+    <!-- jQuery and DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    
+    <!-- Initialize DataTables -->
+    <script>
+        $(document).ready(function() {
+            $('#stats-table').DataTable({
+                "paging": true,
+                "searching": true,
+                "ordering": true,
+                "order": [[ 2, "desc" ]], // Sort by goals by default
+                "columnDefs": [
+                    { "orderable": true, "targets": [1, 2, 3, 4, 5, 6] }, // Enable sorting on specific columns
+                    { "searchable": true, "targets": [0] } // Enable search on the player name column
+                ],
+                "language": {
+                    "search": "Filter by player:"
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-
