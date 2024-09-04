@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,35 +7,34 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-        <img src="images/Red_and_Black_Circle_Modern_Football_Club_Logo.jpg" alt="Team Logo">
-        <h1>Rovers 49</h1>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="team.html">Meet the Team</a></li>
-            <li><a href="statistics.html">Statistics</a></li>
-            <li><a href="documents.html">Documents</a></li>
-        </ul>
-    </nav>
- </header>
+    <header>
+        <div class="logo">
+            <img src="images/Red_and_Black_Circle_Modern_Football_Club_Logo.jpg" alt="Team Logo">
+            <h1>Rovers 49</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="team.html">Meet the Team</a></li>
+                <li><a href="statistics.html">Statistics</a></li>
+                <li><a href="documents.html">Documents</a></li>
+            </ul>
+        </nav>
+    </header>
 
-
-   <main>
+    <main>
         <section id="player-stats">
             <h2>Player Statistics</h2>
-            <table id="stats-table" class="display">
+            <table id="playerStatsTable">
                 <thead>
                     <tr>
-                        <th>Player</th>
-                        <th>Appearances</th>
-                        <th>Goals</th>
-                        <th>Assists</th>
-                        <th>Clean Sheets</th>
-                        <th>Yellow Cards</th>
-                        <th>Red Cards</th>
+                        <th>Player <input type="text" placeholder="Search Player" onkeyup="filterTable(0)"></th>
+                        <th>Appearances <input type="text" placeholder="Search Appearances" onkeyup="filterTable(1)"></th>
+                        <th>Goals <input type="text" placeholder="Search Goals" onkeyup="filterTable(2)"></th>
+                        <th>Assists <input type="text" placeholder="Search Assists" onkeyup="filterTable(3)"></th>
+                        <th>Clean Sheets <input type="text" placeholder="Search Clean Sheets" onkeyup="filterTable(4)"></th>
+                        <th>Yellow Cards <input type="text" placeholder="Search Yellow Cards" onkeyup="filterTable(5)"></th>
+                        <th>Red Cards <input type="text" placeholder="Search Red Cards" onkeyup="filterTable(6)"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -250,7 +248,7 @@
                         <td>0</td>
                         <td>0</td>
                     </tr>
-                    <!-- Repeat for other players -->
+                    <!-- Add other players as needed -->
                 </tbody>
             </table>
         </section>
@@ -263,8 +261,27 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Rovers 49. All rights reserved.</p>
-    </footer>
+    <script>
+        function filterTable(columnIndex) {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementsByTagName("input")[columnIndex];
+            filter = input.value.toUpperCase();
+            table = document.getElementById("playerStatsTable");
+            tr = table.getElementsByTagName("tr");
+
+            for (i = 1; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[columnIndex];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 </body>
 </html>
+
