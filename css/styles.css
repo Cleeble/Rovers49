@@ -13,7 +13,7 @@ header {
     padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Space between logo and nav */
+    justify-content: space-between; /* Ensure space between logo and nav */
 }
 
 header .logo {
@@ -23,6 +23,7 @@ header .logo {
 
 header .logo img {
     max-width: 80px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
     margin-right: 20px;
 }
 
@@ -53,6 +54,32 @@ nav ul li a {
     text-decoration: none;
 }
 
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
 /* Home Page Styles */
 main {
     text-align: center; /* Center all text on the home page */
@@ -64,6 +91,10 @@ footer {
     background-color: #333;
     padding: 10px;
     text-align: center;
+}
+
+#carousel {
+    /* Placeholder for carousel styles if needed */
 }
 
 /* Grid Layout for Team Members and Squad Players */
@@ -96,6 +127,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
+    color: #000; /* Black text color for table content */
     font-size: 18px; /* Larger font size for better readability */
 }
 
@@ -110,74 +142,31 @@ th, td {
 
 th {
     background-color: #ff4500; /* Orange color for table headers */
-    color: #000; /* Black text color */
+    color: #fff; /* White text color for contrast */
     font-size: 20px; /* Larger font size for headers */
 }
 
 tbody tr:nth-child(even) {
-    background-color: #444;
-    color: #fff; /* White text on dark background */
+    background-color: #f4f4f4; /* Light grey background for even rows */
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #fff;
-    color: #000; /* Black text on light background */
+    background-color: #fff; /* White background for odd rows */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column; /* Stack the logo and menu vertically */
-        align-items: flex-start; /* Align items to the start of the header */
-    }
-
-    nav ul {
-        flex-direction: column; /* Stack menu items vertically */
-        margin-top: 10px; /* Add some space between logo and menu */
-    }
-
-    nav ul li {
-        margin-left: 0; /* Remove left margin for vertical stacking */
-        margin-bottom: 10px; /* Add space between each menu item */
-    }
-
-    .grid-container {
-        grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
-    }
+table tbody tr:hover {
+    background-color: #ddd; /* Light grey background on hover for table rows */
 }
 
-@media (max-width: 480px) {
-    .grid-container {
-        grid-template-columns: 1fr; /* Single column for small screens */
-    }
+/* Additional Styling for Better Visuals */
+.grid-container h3, .grid-container p {
+    font-size: 18px; /* Larger font size for names and positions */
+}
 
-    table, th, td {
-        font-size: 16px; /* Reduce font size for readability on smaller screens */
-    }
+.grid-container .member, .grid-container .player {
+    transition: background-color 0.3s ease;
+}
 
-    table {
-        overflow-x: auto; /* Allow horizontal scrolling for tables */
-        display: block;
-    }
-
-    /* Adjust header for very small screens */
-    header {
-        padding: 10px;
-    }
-
-    header .logo img {
-        max-width: 60px; /* Smaller logo */
-    }
-
-    header .logo h1 {
-        font-size: 28px; /* Smaller header text */
-    }
-
-    nav ul {
-        text-align: left; /* Align text to left for smaller screens */
-    }
-
-    main {
-        padding: 10px; /* Reduce padding for smaller screens */
-    }
+.grid-container .member:hover, .grid-container .player:hover {
+    background-color: #555; /* Darker shade on hover */
 }
