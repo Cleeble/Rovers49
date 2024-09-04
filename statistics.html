@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,15 +29,15 @@
             <table id="playerStatsTable">
                 <thead>
                     <tr>
-                        <th>Player <input type="text" placeholder="Search Player" onkeyup="filterTable(0)"></th>
-                        <th>Appearances <input type="text" placeholder="Search Appearances" onkeyup="filterTable(1)"></th>
-                        <th>Goals <input type="text" placeholder="Search Goals" onkeyup="filterTable(2)"></th>
-                        <th>Assists <input type="text" placeholder="Search Assists" onkeyup="filterTable(3)"></th>
-                        <th>Clean Sheets <input type="text" placeholder="Search Clean Sheets" onkeyup="filterTable(4)"></th>
-                        <th>Yellow Cards <input type="text" placeholder="Search Yellow Cards" onkeyup="filterTable(5)"></th>
-                        <th>Red Cards <input type="text" placeholder="Search Red Cards" onkeyup="filterTable(6)"></th>
+                        <th onclick="sortTable(0)">Player &#x25B2;&#x25BC;</th>
+                        <th onclick="sortTable(1)">Appearances &#x25B2;&#x25BC;</th>
+                        <th onclick="sortTable(2)">Goals &#x25B2;&#x25BC;</th>
+                        <th onclick="sortTable(3)">Assists &#x25B2;&#x25BC;</th>
+                        <th onclick="sortTable(4)">Clean Sheets &#x25B2;&#x25BC;</th>
+                        <th onclick="sortTable(5)">Yellow Cards &#x25B2;&#x25BC;</th>
+                        <th onclick="sortTable(6)">Red Cards &#x25B2;&#x25BC;</th>
                     </tr>
-                </thead>
+                 </thead>
                 <tbody>
                     <tr>
                         <td>Charlie Clee</td>
@@ -262,21 +263,54 @@
     </main>
 
     <script>
-        function filterTable(columnIndex) {
-            var input, filter, table, tr, td, i, txtValue;
-            input = document.getElementsByTagName("input")[columnIndex];
-            filter = input.value.toUpperCase();
+        function sortTable(columnIndex) {
+            var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
             table = document.getElementById("playerStatsTable");
-            tr = table.getElementsByTagName("tr");
+            switching = true;
+            dir = "asc"; // Set the sorting direction to ascending
 
-            for (i = 1; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[columnIndex];
-                if (td) {
-                    txtValue = td.textContent || td.innerText;
-                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
+            while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[columnIndex];
+                    y = rows[i + 1].getElementsByTagName("TD")[columnIndex];
+
+                    if (dir == "asc") {
+                        if (isNaN(x.innerHTML)) { // Check if sorting alphabetically
+                            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                                shouldSwitch = true;
+                                break;
+                            }
+                        } else { // Sorting numerically
+                            if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                                shouldSwitch = true;
+                                break;
+                            }
+                        }
+                    } else if (dir == "desc") {
+                        if (isNaN(x.innerHTML)) {
+                            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                                shouldSwitch = true;
+                                break;
+                            }
+                        } else {
+                            if (Number(x.innerHTML) < Number(y.innerHTML)) {
+                                shouldSwitch = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount++;
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
                     }
                 }
             }
@@ -284,4 +318,3 @@
     </script>
 </body>
 </html>
-
