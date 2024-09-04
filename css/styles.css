@@ -139,3 +139,93 @@ tbody tr:nth-child(even) {
 table tbody tr:hover {
     background-color: #555; /* Darker shade on hover for table rows */
 }
+
+/* DataTables Custom Styling */
+.dataTables_wrapper .dataTables_filter {
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.dataTables_wrapper .dataTables_length {
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.dataTables_wrapper .dataTables_info {
+    color: #fff;
+    margin-top: 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    margin-top: 10px;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    background-color: #444;
+    color: #fff !important;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border-radius: 4px;
+    border: 1px solid #333;
+    text-decoration: none;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    background-color: #ff4500; /* Orange color for the active page */
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background-color: #555; /* Darker shade on hover */
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    header .logo h1 {
+        font-size: 28px; /* Adjusted for smaller screens */
+    }
+
+    #stats-table {
+        font-size: 14px; /* Smaller font size for table on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo h1 {
+        font-size: 24px; /* Adjusted for even smaller screens */
+    }
+
+    #stats-table {
+        font-size: 12px; /* Further adjusted font size */
+    }
+
+    .logo img {
+        max-width: 60px; /* Smaller logo on small screens */
+    }
+
+    th, td {
+        padding: 10px; /* Adjusted padding for smaller screens */
+    }
+}
