@@ -59,12 +59,12 @@ main {
     text-align: Left; /* Center all text on the home page */
     padding: 20px;
     color: #ff4500; /* Orange color for text */
-}
-<style>
+    <style>
   h2 {
     text-decoration: underline;
   }
 </style>
+}
 
 
 footer {
