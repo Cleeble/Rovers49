@@ -60,6 +60,12 @@ main {
     padding: 20px;
     color: #ff4500; /* Orange color for text */
 }
+<style>
+  h2 {
+    text-decoration: underline;
+  }
+</style>
+
 
 footer {
     background-color: #333;
