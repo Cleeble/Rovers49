@@ -7,6 +7,11 @@ body {
     padding: 0;
 }
 
+/* Change H4 text to white */
+h4 {
+    color: #fff;
+}
+
 /* Header Styles */
 header {
     background-color: #333;
