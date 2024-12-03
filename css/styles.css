@@ -223,10 +223,5 @@ table tbody tr:hover {
     nav ul li {
         margin-left: 10px;
     }
-    .player-image {
-    width: 150px; /* Set the desired width */
-    height: 150px; /* Set the desired height */
-    object-fit: cover; /* Ensures the image fills the dimensions without distortion */
-    border-radius: 8px; /* Optional: Adds rounded corners */
-    }
+
 }
