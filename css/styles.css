@@ -7,18 +7,13 @@ body {
     padding: 0;
 }
 
-/* Change H4 text to white */
-h4 {
-    color: #fff;
-}
-
 /* Header Styles */
 header {
     background-color: #333;
     padding: 20px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Ensure space between logo and nav */
+    justify-content: space-between;
 }
 
 header .logo {
@@ -27,15 +22,15 @@ header .logo {
 }
 
 header .logo img {
-    max-width: 80px; /* Adjust size as needed */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 80px;
+    height: auto;
     margin-right: 20px;
 }
 
 header .logo h1 {
-    font-size: 36px; /* Larger font size for the header */
+    font-size: 36px;
     margin: 0;
-    color: #ff4500; /* Orange color for the header text */
+    color: #ff4500;
 }
 
 nav {
@@ -47,10 +42,10 @@ nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
     margin-left: 20px;
 }
 
@@ -61,12 +56,11 @@ nav ul li a {
 
 /* Home Page Styles */
 main {
-    text-align: left; /* Align all text on the home page */
+    text-align: left;
     padding: 20px;
-    color: #ff4500; /* Orange color for text */
+    color: #ff4500;
 }
 
-/* Underline H2 on the home page */
 main h2 {
     text-decoration: underline;
 }
@@ -75,44 +69,46 @@ footer {
     background-color: #333;
     padding: 10px;
     text-align: center;
+    color: #fff;
 }
 
-#carousel {
-    /* Placeholder for carousel styles if needed */
-}
-
-/* Grid Layout for Team Members and Squad Players */
+/* Grid Layout for Team Members */
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Five columns across */
-    gap: 20px; /* Spacing between grid items */
-    text-align: center; /* Center the text in each grid item */
-    margin: 20px; /* Add some space around the grid */
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    text-align: center;
+    margin: 20px;
 }
 
 .member, .player {
     background-color: #444;
     padding: 20px;
     border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.member:hover, .player:hover {
+    background-color: #555;
 }
 
 h3 {
+    color: #ff4500;
     margin-bottom: 10px;
-    color: #ff4500; /* Orange color for headings */
 }
 
 p {
     margin: 0;
-    color: #fff; /* White color for positions */
+    color: #fff;
 }
 
-/* Table Styles for Statistics Page */
+/* Statistics Table */
 table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
-    color: #000; /* Black text color for table content */
-    font-size: 18px; /* Larger font size for better readability */
+    color: #000;
+    font-size: 18px;
 }
 
 table, th, td {
@@ -125,37 +121,61 @@ th, td {
 }
 
 th {
-    background-color: #ff4500; /* Orange color for table headers */
-    color: #fff; /* White text color for contrast */
-    font-size: 20px; /* Larger font size for headers */
+    background-color: #ff4500;
+    color: #fff;
+    font-size: 20px;
 }
 
 tbody tr:nth-child(even) {
-    background-color: #f4f4f4; /* Light grey background for even rows */
+    background-color: #f4f4f4;
 }
 
 tbody tr:nth-child(odd) {
-    background-color: #fff; /* White background for odd rows */
+    background-color: #fff;
 }
 
 table tbody tr:hover {
-    background-color: #ddd; /* Light grey background on hover for table rows */
+    background-color: #ddd;
 }
 
-/* Additional Styling for Better Visuals */
-.grid-container h3, .grid-container p {
-    font-size: 18px; /* Larger font size for names and positions */
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    header .logo h1 {
+        font-size: 28px;
+    }
 }
 
-.grid-container .member, .grid-container .player {
-    transition: background-color 0.3s ease;
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
 }
 
-.grid-container .member:hover, .grid-container .player:hover {
-    background-color: #555; /* Darker shade on hover */
+@media (max-width: 480px) {
+    header .logo img {
+        max-width: 60px;
+    }
+
+    header .logo h1 {
+        font-size: 20px;
+    }
 }
 
-/* Specific Styles for Player Page */
+/* Scoped Styles for Player Pages */
 .player-page .player-card {
     display: flex;
     align-items: center;
@@ -168,10 +188,10 @@ table tbody tr:hover {
 }
 
 .player-page .player-image {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
-    border-radius: 50%; /* Circular image */
+    border-radius: 50%;
     margin-right: 20px;
 }
 
@@ -183,27 +203,15 @@ table tbody tr:hover {
 .player-page .player-name {
     font-size: 24px;
     margin-bottom: 10px;
-    color: #ff4500; /* Highlighted name in orange */
+    color: #ff4500;
 }
 
 .player-page .player-stats p {
     margin: 5px 0;
 }
 
-/* Responsive Styles */
-@media (max-width: 1024px) {
-    .grid-container {
-        grid-template-columns: repeat(3, 1fr); /* Adjust grid for medium screens */
-    }
-
-    header .logo h1 {
-        font-size: 28px; /* Slightly smaller header text on medium screens */
-    }
-
-    nav ul li {
-        margin-left: 15px;
-    }
-
+/* Responsive Adjustments for Player Pages */
+@media (max-width: 768px) {
     .player-page .player-card {
         flex-direction: column;
         text-align: center;
@@ -211,60 +219,7 @@ table tbody tr:hover {
 
     .player-page .player-image {
         margin: 0 auto 10px;
-    }
-}
-
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .logo {
-        margin-bottom: 10px;
-    }
-
-    nav {
-        width: 100%;
-    }
-
-    nav ul {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    .grid-container {
-        grid-template-columns: 1fr; /* Single column grid on small screens */
-    }
-
-    header .logo h1 {
-        font-size: 24px; /* Smaller header text on small screens */
-    }
-
-    table {
-        font-size: 16px; /* Slightly smaller text size for tables on small screens */
-    }
-
-    th, td {
-        padding: 10px; /* Adjust padding for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    header .logo img {
-        max-width: 60px; /* Smaller logo on very small screens */
-    }
-
-    header .logo h1 {
-        font-size: 20px; /* Even smaller header text on very small screens */
-    }
-
-    nav ul li {
-        margin-left: 10px;
+        width: 80px;
+        height: 80px;
     }
 }
