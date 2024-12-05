@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Team - Liam Thomas</title>
+    <link rel="stylesheet" href="../css/styles.css"> <!-- Updated path -->
+</head>
+<body class="player-page"> <!-- Added class for player-specific styles -->
+    <header>
+        <div class="logo">
+            <img src="../images/Red and Black Circle Modern Football Club Logo (1).jpg" alt="Team Logo"> <!-- Updated path -->
+            <h1>Rovers 49</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li> <!-- Updated paths -->
+                <li><a href="../team.html">Meet the Team</a></li>
+                <li><a href="../statistics.html">Statistics</a></li>
+                <li><a href="../documents.html">Club Records</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+        <div class="player-card">
+            <img src="../images/YELLOWBELLYPHOTO - CHARLIE CLEE-9.jpg" alt="Player Image" class="player-image"> <!-- Updated path -->
+            <div class="player-info">
+                <h1 class="player-name">Liam Thomas</h1>
+                <div class="player-stats">
+                    <p>Games Played: <span id="games-played">0</span></p> <!-- Dynamic total -->
+                    <p>Goals: <span id="total-goals">0</span></p> <!-- Dynamic total -->
+                    <p>Assists: <span id="total-assists">0</span></p> <!-- Dynamic total -->
+                    <p>Position: Defender/Midfielder</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Seasonal Stats Display -->
+        <section class="season-stats">
+            <h4>Season 2024/25</h4>
+            <p>Appearances: <span class="season-games">10</span></p>
+            <p>Goals: <span class="season-goals">0</span></p>
+            <p>Assists: <span class="season-assists">1</span></p>
+
+        </section>
+    </main>
+
+    <script>
+        // Select all seasonal stats
+        const seasonGames = document.querySelectorAll('.season-games');
+        const seasonGoals = document.querySelectorAll('.season-goals');
+        const seasonAssists = document.querySelectorAll('.season-assists');
+
+        // Initialize totals
+        let totalGames = 0;
+        let totalGoals = 0;
+        let totalAssists = 0;
+
+        // Sum all games played across seasons
+        seasonGames.forEach(season => {
+            totalGames += parseInt(season.textContent, 10);
+        });
+
+        // Sum all goals across seasons
+        seasonGoals.forEach(season => {
+            totalGoals += parseInt(season.textContent, 10);
+        });
+
+        // Sum all assists across seasons
+        seasonAssists.forEach(season => {
+            totalAssists += parseInt(season.textContent, 10);
+        });
+
+        // Update the player card with total stats
+        document.getElementById('games-played').textContent = totalGames;
+        document.getElementById('total-goals').textContent = totalGoals;
+        document.getElementById('total-assists').textContent = totalAssists;
+    </script>
+</body>
+</html>
