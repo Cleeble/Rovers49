@@ -36,24 +36,22 @@
             </div>
         </div>
 
-        <!-- Hidden Seasonal Stats Section -->
-        <div class="season-stats" style="display:none;">
-            <p>Season 2024/25: <span class="season-games">7</span> games, <span class="season-goals">5</span> goals, <span class="season-assists">3</span> assists</p>
-        </div>
+        <!-- Seasonal Stats Display -->
+        <section class="season-stats">
+            <h4>Season 2024/25</h4>
+            <p>Appearances: <span class="season-games">7</span></p>
+            <p>Goals: <span class="season-goals">5</span></p>
+            <p>Assists: <span class="season-assists">3</span></p>
 
-        <!-- Display Seasonal Stats -->
-        <br>
-        <br>
-        <h4>Season 2024/25</h4>
-        <h4>Appearances: 7</h4>
-        <h4>Goals: 6</h4>
-        <h4>Assists: 3</h4>
-
-
+            <h4>Season 2023/24</h4>
+            <p>Appearances: <span class="season-games">10</span></p>
+            <p>Goals: <span class="season-goals">7</span></p>
+            <p>Assists: <span class="season-assists">4</span></p>
+        </section>
     </main>
 
     <script>
-        // Select all season stats
+        // Select all seasonal stats
         const seasonGames = document.querySelectorAll('.season-games');
         const seasonGoals = document.querySelectorAll('.season-goals');
         const seasonAssists = document.querySelectorAll('.season-assists');
@@ -78,7 +76,7 @@
             totalAssists += parseInt(season.textContent, 10);
         });
 
-        // Update the stats dynamically
+        // Update the player card with total stats
         document.getElementById('games-played').textContent = totalGames;
         document.getElementById('total-goals').textContent = totalGoals;
         document.getElementById('total-assists').textContent = totalAssists;
