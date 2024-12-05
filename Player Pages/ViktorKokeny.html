@@ -29,10 +29,10 @@
                 <h1 class="player-name">Viktor Kokeny</h1>
                 <div class="player-stats">
                     <p>Games Played: <span id="games-played">0</span></p> <!-- Dynamic total -->
-                    <p>Clean Sheets: <span id="total-clean sheets">0</span></p> <!-- Dynamic total -->
+                    <p>Clean Sheets: <span id="total-clean-sheets">0</span></p> <!-- Dynamic total -->
                     <p>Goals: <span id="total-goals">0</span></p> <!-- Dynamic total -->
                     <p>Assists: <span id="total-assists">0</span></p> <!-- Dynamic total -->
-                    <p>Position: Midfielder/Forward</p>
+                    <p>Position: Goalkeeper</p>
                 </div>
             </div>
         </div>
@@ -41,10 +41,9 @@
         <section class="season-stats">
             <h4>Season 2024/25</h4>
             <p>Appearances: <span class="season-games">5</span></p>
-            <p>Clean Sheets: <span class="season-clean sheets">2</span></p>
+            <p>Clean Sheets: <span class="season-clean-sheets">2</span></p>
             <p>Goals: <span class="season-goals">0</span></p>
             <p>Assists: <span class="season-assists">0</span></p>
-
         </section>
     </main>
 
@@ -53,11 +52,13 @@
         const seasonGames = document.querySelectorAll('.season-games');
         const seasonGoals = document.querySelectorAll('.season-goals');
         const seasonAssists = document.querySelectorAll('.season-assists');
+        const seasonCleanSheets = document.querySelectorAll('.season-clean-sheets'); // New selector for clean sheets
 
         // Initialize totals
         let totalGames = 0;
         let totalGoals = 0;
         let totalAssists = 0;
+        let totalCleanSheets = 0; // New variable for clean sheets
 
         // Sum all games played across seasons
         seasonGames.forEach(season => {
@@ -74,10 +75,16 @@
             totalAssists += parseInt(season.textContent, 10);
         });
 
+        // Sum all clean sheets across seasons
+        seasonCleanSheets.forEach(season => {
+            totalCleanSheets += parseInt(season.textContent, 10);
+        });
+
         // Update the player card with total stats
         document.getElementById('games-played').textContent = totalGames;
         document.getElementById('total-goals').textContent = totalGoals;
         document.getElementById('total-assists').textContent = totalAssists;
+        document.getElementById('total-clean-sheets').textContent = totalCleanSheets; // Update clean sheets
     </script>
 </body>
 </html>
