@@ -29,8 +29,8 @@
                 <h1 class="player-name">Charlie Clee</h1>
                 <div class="player-stats">
                     <p>Games Played: <span id="games-played">0</span></p> <!-- Dynamic total -->
-                    <p>Goals: 12</p>
-                    <p>Assists: 7</p>
+                    <p>Goals: <span id="total-goals">0</span></p> <!-- Dynamic total -->
+                    <p>Assists: <span id="total-assists">0</span></p> <!-- Dynamic total -->
                     <p>Position: Midfielder/Forward</p>
                 </div>
             </div>
@@ -38,7 +38,8 @@
 
         <!-- Hidden Seasonal Stats Section -->
         <div class="season-stats" style="display:none;">
-            <p>Season 2024/25: <span class="season-games">7</span></p> <!-- Fixed class name -->
+            <p>Season 2024/25: <span class="season-games">7</span> games, <span class="season-goals">5</span> goals, <span class="season-assists">3</span> assists</p>
+            <p>Season 2023/24: <span class="season-games">10</span> games, <span class="season-goals">7</span> goals, <span class="season-assists">4</span> assists</p>
         </div>
 
         <!-- Display Seasonal Stats -->
@@ -46,20 +47,45 @@
         <br>
         <h4>Season 2024/25</h4>
         <h4>Appearances: 7</h4>
+        <h4>Goals: 5</h4>
+        <h4>Assists: 3</h4>
+
+        <h4>Season 2023/24</h4>
+        <h4>Appearances: 10</h4>
+        <h4>Goals: 7</h4>
+        <h4>Assists: 4</h4>
     </main>
 
     <script>
-        // Select all season game elements
+        // Select all season stats
         const seasonGames = document.querySelectorAll('.season-games');
-        let totalGames = 0;
+        const seasonGoals = document.querySelectorAll('.season-goals');
+        const seasonAssists = document.querySelectorAll('.season-assists');
 
-        // Calculate total games across seasons
+        // Initialize totals
+        let totalGames = 0;
+        let totalGoals = 0;
+        let totalAssists = 0;
+
+        // Sum all games played across seasons
         seasonGames.forEach(season => {
             totalGames += parseInt(season.textContent, 10);
         });
 
-        // Update the Games Played value dynamically
+        // Sum all goals across seasons
+        seasonGoals.forEach(season => {
+            totalGoals += parseInt(season.textContent, 10);
+        });
+
+        // Sum all assists across seasons
+        seasonAssists.forEach(season => {
+            totalAssists += parseInt(season.textContent, 10);
+        });
+
+        // Update the stats dynamically
         document.getElementById('games-played').textContent = totalGames;
+        document.getElementById('total-goals').textContent = totalGoals;
+        document.getElementById('total-assists').textContent = totalAssists;
     </script>
 </body>
 </html>
