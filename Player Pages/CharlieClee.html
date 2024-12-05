@@ -38,25 +38,27 @@
 
         <!-- Hidden Seasonal Stats Section -->
         <div class="season-stats" style="display:none;">
-            <p>Season 2024/25: <span class="season-Apperances">10</span></p>
+            <p>Season 2024/25: <span class="season-games">7</span></p> <!-- Fixed class name -->
         </div>
+
+        <!-- Display Seasonal Stats -->
         <br>
         <br>
         <h4>Season 2024/25</h4>
-        <h4>Apperances: 7</h4>
+        <h4>Appearances: 7</h4>
     </main>
 
     <script>
-        // Get all season game data
+        // Select all season game elements
         const seasonGames = document.querySelectorAll('.season-games');
         let totalGames = 0;
 
-        // Sum all games played across seasons
+        // Calculate total games across seasons
         seasonGames.forEach(season => {
             totalGames += parseInt(season.textContent, 10);
         });
 
-        // Update the Games Played value in the stats
+        // Update the Games Played value dynamically
         document.getElementById('games-played').textContent = totalGames;
     </script>
 </body>
