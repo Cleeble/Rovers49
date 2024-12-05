@@ -26,19 +26,35 @@
         <div class="player-card">
             <img src="../images/YELLOWBELLYPHOTO - CHARLIE CLEE-9.jpg" alt="Player Image" class="player-image"> <!-- Updated path -->
             <div class="player-info">
-                <h1 class="player-name">Charlie Clee</h1> <!-- Updated name -->
+                <h1 class="player-name">Charlie Clee</h1>
                 <div class="player-stats">
-                    <p>Games Played: 25</p>
+                    <p>Games Played: <span id="games-played">0</span></p> <!-- Dynamic total -->
                     <p>Goals: 12</p>
                     <p>Assists: 7</p>
-                    <p>Position: Midfielder/Forward</p> <!-- Updated position -->
+                    <p>Position: Midfielder/Forward</p>
                 </div>
             </div>
         </div>
-        <br>
-        <br>
-        <h2>Record List</h2>
-    <h4>Season 24/25</h4>
+
+        <!-- Hidden Seasonal Stats Section -->
+        <div class="season-stats" style="display:none;">
+            <p>Season 2022/23: <span class="season-games">10</span></p>
+            <p>Season 2023/24: <span class="season-games">15</span></p>
+        </div>
     </main>
+
+    <script>
+        // Get all season game data
+        const seasonGames = document.querySelectorAll('.season-games');
+        let totalGames = 0;
+
+        // Sum all games played across seasons
+        seasonGames.forEach(season => {
+            totalGames += parseInt(season.textContent, 10);
+        });
+
+        // Update the Games Played value in the stats
+        document.getElementById('games-played').textContent = totalGames;
+    </script>
 </body>
 </html>
