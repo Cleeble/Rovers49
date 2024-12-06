@@ -7,6 +7,11 @@ body {
     padding: 0;
 }
 
+/* Global h4 Styles */
+h4 {
+    color: #fff !important; /* Force h4 text to be white */
+}
+
 /* Header Styles */
 header {
     background-color: #333;
@@ -54,7 +59,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Index Page Styles */
+/* Home Page Styles */
 main {
     text-align: left;
     padding: 20px;
@@ -64,11 +69,6 @@ main {
 main h2 {
     text-decoration: underline;
 }
-
-main h4 {
-    color: #fff !important; /* Forcing white text color */
-}
-
 
 footer {
     background-color: #333;
