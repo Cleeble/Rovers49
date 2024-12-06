@@ -66,8 +66,9 @@ main h2 {
 }
 
 main h4 {
-    color: #fff; /* Corrected to use the proper property */
+    color: #fff !important; /* Forcing white text color */
 }
+
 
 footer {
     background-color: #333;
