@@ -70,12 +70,6 @@ h4 {
     color: #fff !important; /* Default h4 color is white */
 }
 
-/* Global Underlined h4 Styles */
-h4[style*="text-decoration: underline"], 
-h4 u {
-    color: #ff4500 !important; /* Orange for underlined h4 */
-}
-
 /* Footer Styles */
 footer {
     background-color: #333;
