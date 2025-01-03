@@ -55,32 +55,35 @@ nav ul li a {
 }
 
 /* Home Page Styles */
-main {
+main.index-page {
     text-align: left;
     padding: 20px;
     color: #ff4500;
 }
 
-main h2 {
+main.index-page h2 {
     text-decoration: underline;
+}
+
+/* Bullet Point Styles for Index Page */
+main.index-page ul,
+main.index-page ol {
+    color: #fff; /* Ensure bullet point text is white */
+}
+
+main.index-page ul li,
+main.index-page ol li {
+    color: #fff !important; /* Enforce white text for list items */
+}
+
+main.index-page ul li *,
+main.index-page ol li * {
+    color: #fff !important; /* Ensure all descendants inside list items are white */
 }
 
 /* Global h4 Styles */
 h4 {
     color: #fff !important; /* Default h4 color is white */
-}
-
-/* Bullet Point Styles */
-ul, ol {
-    color: #fff; /* Ensure bullet point text is white */
-}
-
-ul li, ol li {
-    color: #fff !important; /* Ensure text inside list items is white */
-}
-
-ul li *, ol li * {
-    color: #fff !important; /* Ensure all descendants inside list items are white */
 }
 
 /* Footer Styles */
