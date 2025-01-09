@@ -85,6 +85,9 @@ main.index-page ol li * {
 h4 {
     color: #fff !important; /* Default h4 color is white */
 }
+h2 {
+    color: #ff4500 !important; /* Default h2 color is orange */
+}
 
 /* Footer Styles */
 footer {
