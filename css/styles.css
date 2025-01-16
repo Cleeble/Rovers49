@@ -50,8 +50,21 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
+    color: lightblue; /* Default hyperlink color */
+    text-decoration: none; /* Removes underline */
+}
+
+nav ul li a:visited {
+    color: lightblue; /* Visited links are also light blue */
+}
+
+nav ul li a:hover {
+    color: #add8e6; /* Slightly lighter blue on hover */
+    text-decoration: underline; /* Adds underline on hover */
+}
+
+nav ul li a:active {
+    color: #87cefa; /* Even lighter blue when clicked */
 }
 
 /* Home Page Styles */
@@ -80,26 +93,6 @@ main.index-page ul li *,
 main.index-page ol li * {
     color: #fff !important; /* Ensure all descendants inside list items are white */
 }
-
-/* Change hyperlink colors */
-a {
-    color: lightblue; /* Default color for unvisited links */
-    text-decoration: none; /* Optional: Removes the underline */
-}
-
-a:visited {
-    color: lightblue; /* Change visited links to light blue */
-}
-
-a:hover {
-    color: #add8e6; /* Slightly lighter blue on hover */
-    text-decoration: underline; /* Optional: Adds underline on hover */
-}
-
-a:active {
-    color: #87cefa; /* Even lighter blue when clicked */
-}
-
 
 /* Global h4 Styles */
 h4 {
@@ -251,7 +244,7 @@ table tbody tr:hover {
     color: #ff4500;
 }
 
-player-page .player-stats p {
+.player-page .player-stats p {
     margin: 5px 0;
 }
 
