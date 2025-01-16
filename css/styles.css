@@ -9,12 +9,12 @@ body {
 
 /* Global Link Styles */
 a {
-    color: lightblue; /* Default hyperlink color */
+    color: lightblue; /* Default hyperlink color for unvisited links */
     text-decoration: none; /* Removes underline */
 }
 
 a:visited {
-    color: lightblue; /* Visited links are also light blue */
+    color: lightblue !important; /* Forces visited links to be light blue */
 }
 
 a:hover {
@@ -66,6 +66,11 @@ nav ul {
 
 nav ul li {
     margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff; /* Menu bar text is white */
+    text-decoration: none; /* Removes underline */
 }
 
 /* Home Page Styles */
