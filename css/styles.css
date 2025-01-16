@@ -81,6 +81,26 @@ main.index-page ol li * {
     color: #fff !important; /* Ensure all descendants inside list items are white */
 }
 
+/* Change hyperlink colors */
+a {
+    color: lightblue; /* Default color for unvisited links */
+    text-decoration: none; /* Optional: Removes the underline */
+}
+
+a:visited {
+    color: lightblue; /* Change visited links to light blue */
+}
+
+a:hover {
+    color: #add8e6; /* Slightly lighter blue on hover */
+    text-decoration: underline; /* Optional: Adds underline on hover */
+}
+
+a:active {
+    color: #87cefa; /* Even lighter blue when clicked */
+}
+
+
 /* Global h4 Styles */
 h4 {
     color: #fff !important; /* Default h4 color is white */
