@@ -7,6 +7,25 @@ body {
     padding: 0;
 }
 
+/* Global Link Styles */
+a {
+    color: lightblue; /* Default hyperlink color */
+    text-decoration: none; /* Removes underline */
+}
+
+a:visited {
+    color: lightblue; /* Visited links are also light blue */
+}
+
+a:hover {
+    color: #add8e6; /* Slightly lighter blue on hover */
+    text-decoration: underline; /* Adds underline on hover */
+}
+
+a:active {
+    color: #87cefa; /* Even lighter blue when clicked */
+}
+
 /* Header Styles */
 header {
     background-color: #333;
@@ -49,24 +68,6 @@ nav ul li {
     margin-left: 20px;
 }
 
-nav ul li a {
-    color: lightblue; /* Default hyperlink color */
-    text-decoration: none; /* Removes underline */
-}
-
-nav ul li a:visited {
-    color: lightblue; /* Visited links are also light blue */
-}
-
-nav ul li a:hover {
-    color: #add8e6; /* Slightly lighter blue on hover */
-    text-decoration: underline; /* Adds underline on hover */
-}
-
-nav ul li a:active {
-    color: #87cefa; /* Even lighter blue when clicked */
-}
-
 /* Home Page Styles */
 main.index-page {
     text-align: left;
@@ -98,6 +99,7 @@ main.index-page ol li * {
 h4 {
     color: #fff !important; /* Default h4 color is white */
 }
+
 h2 {
     color: #ff4500 !important; /* Default h2 color is orange */
 }
@@ -244,7 +246,7 @@ table tbody tr:hover {
     color: #ff4500;
 }
 
-.player-page .player-stats p {
+player-page .player-stats p {
     margin: 5px 0;
 }
 
